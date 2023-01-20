@@ -1,4 +1,6 @@
 ---
+import Navbar from "../components/Navbar/Navbar.astro";
+
 const pageTitle = "About ME"
 
 const identity = {
@@ -24,10 +26,8 @@ const goal = 3;
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
         <h1>About Me</h1>
+        <Navbar/>
             <ul>
             <li>My name is {identity.firstName}.</li>
             <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
