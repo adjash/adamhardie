@@ -1,4 +1,6 @@
 ---
+import DocFooter from "../components/DocFooter/DocFooter.astro";
+import DocHeader from "../components/DocHeader/DocHeader.astro";
 import Navbar from "../components/Navbar/Navbar.astro";
 
 const pageTitle = "About ME"
@@ -11,35 +13,24 @@ const identity = {
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
-
-const happy = true;
-const finished = false;
-const goal = 3;
 ---
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+		<DocHeader />
 		<title>{pageTitle}</title>
 	</head>
 	<body>
         <h1>About Me</h1>
         <Navbar/>
-            <ul>
+          <ul>
             <li>My name is {identity.firstName}.</li>
             <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
           </ul>
-          <p>My skills are:</p>
+            <p>My skills are:</p>
           <ul>
             {skills.map((skill) => <li>{skill}</li>)}
           </ul>
-          {happy && <p>I am happy to be learning Astro!</p>}
-
-{finished && <p>I finished this tutorial!</p>}
-
-{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+      <DocFooter/>
 	</body>
 </html>

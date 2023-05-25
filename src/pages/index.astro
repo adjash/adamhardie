@@ -1,17 +1,21 @@
 ---
 import Navbar from "../components/Navbar/Navbar.astro";
+import DocHeader from "../components/DocHeader/DocHeader.astro";
+import DocFooter from "../components/DocFooter/DocFooter.astro";
+import Hero from "../components/Hero/Hero.astro";
+import Profile from "../components/Profile/Profile.astro";
+
 ---
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+		<DocHeader />
 		<title>Adam Hardie</title>
 	</head>
 	<body>
-		<h1>Adam Hardie</h1>
-		<Navbar/>
+		<header>
+			<Profile />
+		</header>
+		<DocFooter />
 	</body>
 </html>

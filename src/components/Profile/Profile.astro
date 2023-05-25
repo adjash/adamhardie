@@ -1,0 +1,51 @@
+---
+---
+<style>
+  section {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 1rem;
+  }
+  .profile-img {
+    width: 20%;
+    display: flex;
+    align-items: flex-start;
+  }
+  .profile-img img {
+    width: 100%;
+    border-radius: 16px;
+  }
+  .profile-content {
+    width: 75%;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  @media screen and (max-width: 678px) {
+    section {
+      flex-direction: column;
+      max-width: 500px;
+    }
+    .profile-content, .profile-img {
+      width: 100%;
+    }
+    .profile-img img {
+      max-width: 250px;
+    }
+    h2 {
+      margin-top: revert;
+    }
+  }
+</style>
+<section>
+  <div class="profile-img">
+    <img src="/img/headshot.jpg" alt="">
+  </div>
+  <div class="profile-content">
+    <h2>Adam Hardie</h2>
+    <p>Adam Hardie is a skilled and innovative Frontend Engineer with a passion for creating exceptional user experiences. With a strong foundation in JavaScript, React, CSS, HTML, and various web-related technologies, she has a proven track record of developing responsive and visually appealing web applications. Adam combines his technical expertise with a keen eye for design and usability, resulting in seamless interfaces that engage users and exceed expectations.</p>
+    
+  </div>
+</section>
