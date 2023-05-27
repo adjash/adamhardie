@@ -1,0 +1,15 @@
+---
+interface Props {
+  title?: string;
+  content?: string;
+  ctaCopy?: string;
+  cardType?: string;
+  buttonType?: string;
+}
+const {title, content, ctaCopy, cardType, buttonType} = Astro.props;
+---
+<div class=`card ${cardType}`>
+  <h4>{title}</h4>
+  <p>{content}</p>
+  <button class=`${buttonType}`>{ctaCopy}</button>
+</div>
