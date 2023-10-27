@@ -7,47 +7,31 @@
     border: 1px solid black;
     border-radius: 16px;
     padding: 1rem;
-  }
-  .profile-img {
-    width: 20%;
-    display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
   }
   .profile-img img {
-    width: 100%;
     border-radius: 16px;
   }
-  .profile-content {
-    width: 75%;
+  .profile-content, .profile-img {
+    width: 100%;
   }
   h2 {
-    margin-top: 0;
+    margin: 16px 0;
   }
-  @media screen and (max-width: 678px) {
-    section {
-      flex-direction: column;
-      max-width: 500px;
-    }
-    .profile-content, .profile-img {
-      width: 100%;
-    }
-    .profile-img img {
-      max-width: 250px;
-    }
-    h2 {
-      margin-top: revert;
-    }
+  p:last-child {
+    margin-bottom: 0;
   }
 </style>
 <section>
   <div class="profile-img">
-    <img src="/img/headshot.jpg" alt="">
+    <img src="/img/headshot.jpg" alt="Adam Hardie Headshot" width="250" height="250">
   </div>
   <div class="profile-content">
     <h2>Adam Hardie</h2>
-    <p>Adam Hardie is a skilled and innovative Frontend Engineer with a passion for creating exceptional user experiences. With a strong foundation in JavaScript, React, CSS, HTML, and various web-related technologies, he has a proven track record of developing responsive and visually appealing web applications. Adam combines his technical expertise with a keen eye for design and usability, resulting in seamless interfaces that engage users and exceed expectations.</p>
+    <p>With experience as a software consultant at one of North America's leading banks and his current role as a frontend engineer at one of the largest privately owned companies in Scotland, Adam possesses expertise in Mobile and Web technologies. He has worked with a diverse range of technologies and served clients across various sectors. Demonstrating a consistent ability to rapidly acquire new skills and adapt to emerging technologies, he excels in every project he undertakes.</p>
 
-    <p>For work enquiries, please get in touch <a href="mailto:adam.hardie13@gmail.com">via email</a></p>
-    
+    <p>For work enquiries, please get in touch <a href="mailto:adam.hardie13@gmail.com">via email</a></p>    
   </div>
 </section>
