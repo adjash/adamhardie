@@ -5,18 +5,20 @@ import DocFooter from "../components/DocFooter/DocFooter.astro";
 import Hero from "../components/Hero/Hero.astro";
 import Profile from "../components/Profile/Profile.astro";
 import ToolkitNav from "../components/Navbar/ToolkitNav.astro";
+import MailtoBuilder from "../components/Toolkit/MailtoBuilder.astro";
 
 ---
 
 <html lang="en">
 	<head>
 		<DocHeader />
-		<title>Adam Hardie</title>
+		<title>Mailto link builder</title>
 		<meta name="description" content="Adam Hardie, professional frontend engineer.">
 	</head>
 	<body>
 		<main>
-			<Profile />
+            <h1>Mailto builder</h1>
+            <MailtoBuilder/>
 		</main>
 		<DocFooter />
 	</body>

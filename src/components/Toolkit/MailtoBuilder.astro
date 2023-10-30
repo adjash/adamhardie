@@ -1,0 +1,75 @@
+---
+
+---
+
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    input, textarea {
+        margin-bottom: 2rem;
+    }
+    .copylink {
+        width: 100%;
+        margin-top: 1rem;
+    }
+</style>
+<form>
+    <label for="toaddress">To:</label>
+    <input type="text" name="reciever address" id="toaddress">
+
+    <label for="subject">Subject:</label>
+    <input type="text" name="email subject" id="subject">
+
+    <label for="body">Body:</label>
+    <textarea id="body" name="email body" rows="7"></textarea>
+
+    <label for="text">Link text:</label>
+    <input type="text" name="link text" id="text">
+
+    <label for="classes">Link classes (space seperated):</label>
+    <input type="text" name="link classes" id="classes" placeholder="class-1 class-2 class-3....">
+
+    <button id="generatebtn" type="button">Generate link</button>
+</form>
+<div id="results">
+
+</div>
+<button class="copylink">Copy Link</button>
+<script>
+document.querySelector('#generatebtn').addEventListener('click', (e) => {
+    const toAddress = document.querySelector('#toaddress').value;
+    const subject = document.querySelector('#subject').value;
+    const bodyContent = document.querySelector('#body').value;
+    const linkText = document.querySelector('#text').value;
+    const linkClasses = document.querySelector('#classes').value;
+    const results = document.querySelector('#results');
+
+    clearAndAppendItem(
+        buildLink(toAddress, subject, bodyContent, linkText, linkClasses), 
+        results
+    );
+});
+document.querySelector('.copylink').addEventListener('click', (e) => {
+    copyToClipboard(document.querySelector('#results').innerHTML);
+})
+function buildLink (to, subject = '', body = '', text = '', classes = ''){
+    const encodedSubject = encodeURI(subject);
+    const encodedBody = encodeURI(body);
+
+    return `<a href="mailto:${to}?subject=${encodedSubject}&body=${encodedBody}" class="${classes}">${text}</a>`
+}
+function clearAndAppendItem(item, element) {
+    element.innerHTML = "";
+    return element.innerHTML = item;
+}
+function copyToClipboard(text) {
+  const tempInput = document.createElement('input');
+  tempInput.value = text;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand('copy');
+  document.body.removeChild(tempInput);
+}
+</script>
