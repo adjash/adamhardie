@@ -1,9 +1,21 @@
 ---
-import HamburgerNav from "./HamburgerNav.astro";
-
 
 ---
+
+<style>
+  nav {
+    display: flex;
+    gap: 10px;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 1rem;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+  }
+</style>
+
 <nav>
-    <a href="/">Home</a>
-    <a href="/themebuilder">Themer</a>
+  <a href="/">Home</a>
+  <a href="/technical">Tech blogs</a>
 </nav>

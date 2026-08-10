@@ -1,0 +1,19 @@
+---
+const posts = await Astro.glob("../../pages/technical/*.md*");
+---
+
+{
+  !posts ? (
+    <div>
+      <h1>No Posts</h1>
+    </div>
+  ) : (
+    posts.map((post) => (
+      <article>
+        <h3>{post.frontmatter.title}</h3>
+        <p>{post.frontmatter.description}</p>
+        <a href={post.url}>Read More</a>
+      </article>
+    ))
+  )
+}
