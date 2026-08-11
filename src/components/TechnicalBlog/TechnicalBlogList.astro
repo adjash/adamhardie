@@ -1,5 +1,7 @@
 ---
-const posts = await Astro.glob("../../pages/technical/*.md*");
+const posts = Object.values(
+  import.meta.glob("../../pages/technical/*.md", { eager: true }),
+);
 ---
 
 {
