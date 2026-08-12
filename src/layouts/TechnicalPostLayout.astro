@@ -4,7 +4,12 @@ import DocHeaderAstroComponent from "../components/DocHeader/DocHeader.astro";
 import Navbar from "../components/Navbar/Navbar.astro";
 const { title, description, pubDate, tags, author } = Astro.props;
 ---
-
+<style is:global>
+    
+  pre {
+    padding: 5px;
+  }
+</style>
 <style>
   ul {
     display: flex;
@@ -19,6 +24,7 @@ const { title, description, pubDate, tags, author } = Astro.props;
     border-radius: 16px;
     padding: 0 10px;
   }
+
 </style>
 <html lang="en">
   <head>
