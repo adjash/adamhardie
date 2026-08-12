@@ -1,43 +1,14 @@
 ---
-import ToolkitNav from "../Navbar/ToolkitNav.astro";
 const platform = "github";
 const username = "adjash";
 ---
+
 <style>
   p {
     font-size: 12px;
     text-align: center;
   }
-  .toolkit-toggle{
-    color: inherit; /* blue colors for links too */
-    text-decoration: inherit; /* no underline */
-  }
-  #toolkit-display {
-    transition: all 0.2s ease-in;
-  }
-  #toolkit-display.hidden {
-    height: 0;
-    opacity: 0;
-    pointer-events: none;
-  }
-  #toolkit-display.visible {
-    height: auto;
-    opacity: 1;
-    pointer-events: all;
-  }
 </style>
 <footer>
-  <p><a class="toolkit-toggle" href="#">Adam Hardie</a> - 2023</p>
-  <div id="toolkit-display" class="hidden">
-    <ToolkitNav/>
-  </div>
+  <p><a href="/">Adam Hardie</a> - 2023</p>
 </footer>
-<script>
-document.querySelector('.toolkit-toggle').addEventListener('click', (e) => {
-  e.preventDefault();
-  const toolkitDisplay = document.querySelector('#toolkit-display');
-  toolkitDisplay.classList.toggle('hidden');
-  toolkitDisplay.classList.toggle('visible');
-});
-
-</script>

@@ -1,0 +1,51 @@
+---
+// src/layouts/TechnicalPostLayout.astro
+import DocHeaderAstroComponent from "../components/DocHeader/DocHeader.astro";
+import Navbar from "../components/Navbar/Navbar.astro";
+const { title, description, pubDate, tags, author } = Astro.props;
+---
+
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    border: 1px solid #000;
+    border-radius: 16px;
+    padding: 0 10px;
+  }
+</style>
+<html lang="en">
+  <head>
+    <DocHeaderAstroComponent />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body>
+    <Navbar />
+    <article>
+      <header>
+        <h1>{title}</h1>
+        <time datetime={pubDate.toISOString()}>{pubDate.toDateString()}</time>
+        
+      </header>
+      <slot />
+      {
+          tags && (
+            <p>tags:</p>
+            <ul>
+              {tags.map((tag: string) => <li>{tag}</li>)}
+            </ul>
+          )
+      }
+      {
+        author
+      }
+    </article>
+  </body>
+</html>

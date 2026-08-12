@@ -2,19 +2,22 @@
 import Navbar from "../components/Navbar/Navbar.astro";
 import DocHeader from "../components/DocHeader/DocHeader.astro";
 import DocFooter from "../components/DocFooter/DocFooter.astro";
-import BlogList from "../components/BlogList/BlogList.astro";
-import TechnicalBlogList from "../components/TechnicalBlog/TechnicalBlogList.astro";
 ---
 
 <html lang="en">
   <head>
     <DocHeader />
-    <title>Adam Hardie - Technical Posts</title>
+    <title>Adam Hardie</title>
+    <meta
+      name="description"
+      content="Adam Hardie, professional frontend engineer."
+    />
   </head>
   <body>
-    <Navbar />
-    <h1>Technical Blog</h1>
-    <TechnicalBlogList />
+    <main>
+      <Navbar />
+      <h1>404 - Return <a href="/">Home</a></h1>
+    </main>
     <DocFooter />
   </body>
 </html>

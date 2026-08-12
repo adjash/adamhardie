@@ -1,0 +1,20 @@
+---
+// src/pages/technical/[...slug].astro
+import { getCollection, render } from "astro:content";
+import TechnicalPostLayout from "../../layouts/TechnicalPostLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("technical");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post); // render is now a standalone import
+---
+
+<TechnicalPostLayout {...post.data}>
+  <Content />
+</TechnicalPostLayout>

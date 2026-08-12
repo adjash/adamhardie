@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+const posts = await getCollection("technical");
+
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+import Navbar from "../../components/Navbar/Navbar.astro";
+import DocHeader from "../../components/DocHeader/DocHeader.astro";
+import DocFooter from "../../components/DocFooter/DocFooter.astro";
+---
+
+<style>
+  article {
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 1rem;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    * {
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      margin-top: 10px;
+    }
+  }
+</style>
+<html lang="en">
+  <head>
+    <DocHeader />
+    <title>Adam Hardie - Technical Posts</title>
+  </head>
+  <body>
+    <Navbar />
+    <h1>Tech posts</h1>
+    <p>
+      The intention behind my technical posts is to get some real, human content
+      out into the world. In this weird age of AI, we're seeing vast amounts of
+      AI generated content flooding feeds, from linkedin and medium, to stack
+      overflow and beyond.
+    </p>
+    <p>
+      My technical skill set, while ever growing, is definitely not perfect and
+      I'm open to new ideas and approaches. I do not think anything here should
+      be taken as gospel, nor do I think I have particularly unique takes, but
+      what I do have is a desire to become a much better engineer.
+    </p>
+    <p>
+      This will be real-world discussions around things I find interesting and
+      challenges I've faced in work or personal projects.
+    </p>
+    <section>
+      {
+        sortedPosts.map((post) => (
+          <article>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toDateString()}
+            </time>
+            <a href={`/technical/${post.id}/`}>Read more</a>
+          </article>
+        ))
+      }
+    </section>
+    <DocFooter />
+  </body>
+</html>
